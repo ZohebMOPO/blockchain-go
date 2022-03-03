@@ -59,3 +59,4 @@ func replaceChain(newBlocks []Block) {
 		Blockchain = newBlocks
 	}
 }
+
