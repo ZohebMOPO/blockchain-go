@@ -44,9 +44,3 @@ func isBlockValid(newBlock Block, oldBlock Block) bool {
 
 	return true
 }
-
-func replaceChain(newBlocks []Block) {
-	if len(newBlocks) > len(Blockchain) {
-		Blockchain = newBlocks
-	}
-}
