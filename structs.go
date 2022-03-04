@@ -3,11 +3,11 @@ package main
 type Block struct {
 	Index     int
 	Timestamp string
-	text      string
+	BPM       int
 	Hash      string
 	PrevHash  string
 }
 
 type Message struct {
-	text string
+	BPM int
 }

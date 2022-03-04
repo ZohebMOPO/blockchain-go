@@ -18,7 +18,7 @@ func main() {
 
 	go func() {
 		t := time.Now()
-		dummyBlock := Block{0, t.String(), "", "", ""}
+		dummyBlock := Block{0, t.String(), 0, "", ""}
 		spew.Dump(dummyBlock)
 
 		Blockchain = append(Blockchain, dummyBlock)

@@ -7,21 +7,21 @@ import (
 )
 
 func calculateHash(block Block) string {
-	record := string(block.Index) + block.Timestamp + block.text + block.PrevHash
+	record := string(block.Index) + block.Timestamp + string(block.BPM) + block.PrevHash
 	hash := sha256.New()
 	hash.Write([]byte(record))
 	hashed := hash.Sum(nil)
 	return hex.EncodeToString(hashed)
 }
 
-func generateBlock(oldBlock Block, text string) (Block, error) {
+func generateBlock(oldBlock Block, BPM int) (Block, error) {
 	var newBlock Block
 
 	t := time.Now()
 
 	newBlock.Index = oldBlock.Index + 1
 	newBlock.Timestamp = t.String()
-	newBlock.text = text
+	newBlock.BPM = BPM
 	newBlock.Hash = calculateHash(newBlock)
 	newBlock.PrevHash = oldBlock.Hash
 
